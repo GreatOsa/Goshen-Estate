@@ -127,3 +127,22 @@ function closePopup() {
 closeCelebration.addEventListener("click", closePopup);
 
 continueBtn.addEventListener("click", closePopup);
+
+
+
+/* =========================
+   WEBSITE LOADER
+========================= */
+
+const loader = document.getElementById("loader");
+
+// WAIT FOR PAGE + IMAGES
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        loader.classList.add("hide");
+
+    }, 1200);
+});
