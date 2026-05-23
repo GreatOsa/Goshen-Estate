@@ -1,121 +1,222 @@
 const toggleBtn = document.getElementById("themeToggle");
 
+/* =========================
+   DARK / LIGHT MODE
+========================= */
+
 toggleBtn.addEventListener("click", () => {
+
     document.body.classList.toggle("light-mode");
 
     if (document.body.classList.contains("light-mode")) {
+
         toggleBtn.innerHTML = "🌙";
+
     } else {
+
         toggleBtn.innerHTML = "☀️";
     }
 });
 
-const images =  [
-            "assets/images/IMG-20260522-WA0037.jpg",
-            "assets/images/IMG-20260522-WA0043.jpg",
-            "assets/images/IMG-20260522-WA0066.jpg",
-            "assets/images/IMG-20260522-WA0059.jpg",
-            "assets/images/IMG-20260522-WA0044.jpg",
-            "assets/images/IMG-20260522-WA0069.jpg",
-            "assets/images/IMG-20260522-WA0054.jpg",
-            "assets/images/IMG-20260522-WA0046.jpg",
-            "assets/images/IMG-20260522-WA0024.jpg",
-            "assets/images/IMG-20260522-WA0053.jpg",
-            "assets/images/IMG-20260522-WA0041.jpg",
-            "assets/images/IMG-20260522-WA0049.jpg",
-            "assets/images/IMG-20260522-WA0062.jpg",
-            "assets/images/IMG-20260522-WA0026.jpg",
-            "assets/images/IMG-20260522-WA0029.jpg",
-            "assets/images/IMG-20260522-WA0048.jpg",
-            "assets/images/IMG-20260522-WA0047.jpg",
-            "assets/images/IMG-20260522-WA0064.jpg",
-            "assets/images/IMG-20260522-WA0068.jpg",
-            "assets/images/IMG-20260522-WA0036.jpg",
-            "assets/images/IMG-20260522-WA0025.jpg",
-            "assets/images/IMG-20260522-WA0035.jpg",
-            "assets/images/IMG-20260522-WA0051.jpg",
-            "assets/images/IMG-20260522-WA0073.jpg",
-            "assets/images/IMG-20260522-WA0057.jpg",
-            "assets/images/IMG-20260522-WA0021.jpg",
-            "assets/images/IMG-20260522-WA0020.jpg",
-            "assets/images/IMG-20260522-WA0060.jpg",
-            "assets/images/IMG-20260522-WA0056.jpg",
-            "assets/images/IMG-20260522-WA0055.jpg",
-            "assets/images/IMG-20260522-WA0050.jpg",
-            "assets/images/IMG-20260522-WA0039.jpg",
-            "assets/images/IMG-20260522-WA0072.jpg",
-            "assets/images/IMG-20260522-WA0067.jpg",
-            "assets/images/IMG-20260522-WA0033.jpg",
-            "assets/images/IMG-20260522-WA0071.jpg",
-            "assets/images/IMG-20260522-WA0070.jpg",
-            "assets/images/IMG-20260522-WA0058.jpg",
-            "assets/images/IMG-20260522-WA0052.jpg",
-            "assets/images/IMG-20260522-WA0065.jpg",
-            "assets/images/IMG-20260522-WA0038.jpg",
-            "assets/images/IMG-20260522-WA0063.jpg",
-            "assets/images/IMG-20260522-WA0031.jpg",
-            "assets/images/IMG-20260522-WA0032.jpg",
-            "assets/images/IMG-20260522-WA0028.jpg",
-            "assets/images/IMG-20260522-WA0045.jpg",
-            "assets/images/IMG-20260522-WA0030.jpg",
-            "assets/images/IMG-20260522-WA0023.jpg",
-            "assets/images/IMG-20260522-WA0042.jpg",
-            "assets/images/IMG-20260522-WA0027.jpg",
-            "assets/images/IMG-20260522-WA0034.jpg",
-            "assets/images/IMG-20260522-WA0022.jpg",
-            "assets/images/IMG-20260522-WA0040.jpg",
-            "assets/images/IMG-20260522-WA0061.jpg"
-        ]
+/* =========================
+   GALLERY IMAGES
+========================= */
+
+const images = [
+
+    "assets/images/1.jpg",
+    "assets/images/logo1.png",
+    "assets/images/2.jpg",
+    "assets/images/3.jpg",
+    "assets/images/4.jpg",
+    "assets/images/5.jpg",
+    "assets/images/6.jpg",
+    "assets/images/7.jpg",
+    "assets/images/8.jpg",
+    "assets/images/9.jpg",
+    "assets/images/10.jpg",
+    "assets/images/11.jpg",
+    "assets/images/12.jpg",
+    "assets/images/13.jpg",
+    "assets/images/14.jpg",
+    "assets/images/15.jpg",
+    "assets/images/16.jpg",
+    "assets/images/17.jpg",
+    "assets/images/18.jpg",
+    "assets/images/19.jpg",
+    "assets/images/20.jpg",
+    "assets/images/21.jpg",
+    "assets/images/22.jpg",
+    "assets/images/23.jpg",
+    "assets/images/24.jpg",
+    "assets/images/25.jpg",
+    "assets/images/26.jpg",
+    "assets/images/27.jpg",
+    "assets/images/28.jpg",
+    "assets/images/IMG-20260522-WA0053.jpg",
+    "assets/images/IMG-20260522-WA0049.jpg",
+    "assets/images/IMG-20260522-WA0026.jpg",
+    "assets/images/IMG-20260522-WA0029.jpg",
+    "assets/images/IMG-20260522-WA0048.jpg",
+    "assets/images/IMG-20260522-WA0068.jpg",
+    "assets/images/IMG-20260522-WA0036.jpg",
+    "assets/images/IMG-20260522-WA0051.jpg",
+    "assets/images/IMG-20260522-WA0073.jpg",
+    "assets/images/IMG-20260522-WA0057.jpg",
+    "assets/images/IMG-20260522-WA0021.jpg",
+    "assets/images/IMG-20260522-WA0020.jpg",
+    "assets/images/IMG-20260522-WA0060.jpg",
+    "assets/images/IMG-20260522-WA0056.jpg",
+    "assets/images/IMG-20260522-WA0055.jpg",
+    "assets/images/IMG-20260522-WA0067.jpg",
+    "assets/images/IMG-20260522-WA0052.jpg",
+    "assets/images/IMG-20260522-WA0038.jpg",
+    "assets/images/IMG-20260522-WA0031.jpg",
+    "assets/images/IMG-20260522-WA0032.jpg",
+    "assets/images/IMG-20260522-WA0027.jpg",
+    "assets/images/IMG-20260522-WA0022.jpg",
+    "assets/images/IMG-20260522-WA0061.jpg"
+];
 
 const gallery = document.getElementById("gallery");
 
-images.forEach(img => {
-    const image = document.createElement("img");
-    image.src = img;
-    gallery.appendChild(image);
-});
+/* =========================
+   GRID PATTERNS
+========================= */
 
-/* LIGHTBOX */
-const lightbox = document.getElementById("lightbox");
-const lightboxImg = document.getElementById("lightbox-img");
-const close = document.getElementById("close");
+const patterns = [
+    "normal",
+    "tall",
+    "normal",
+    "wide",
+    "normal",
+    "large"
+];
 
-document.addEventListener("click", (e) => {
-    if (e.target.tagName === "IMG" && e.target.parentElement.id === "gallery") {
+/* =========================
+   CREATE GALLERY
+========================= */
+
+images.forEach((src, index) => {
+
+    // CREATE ITEM
+
+    const item = document.createElement("div");
+
+    item.classList.add("gallery-item");
+
+    // APPLY GRID STYLE
+
+    const pattern = patterns[index % patterns.length];
+
+    if (pattern !== "normal") {
+
+        item.classList.add(pattern);
+    }
+
+    // CREATE IMAGE
+
+    const img = document.createElement("img");
+
+    img.src = src;
+
+    // APPEND
+
+    item.appendChild(img);
+
+    gallery.appendChild(item);
+
+    /* =========================
+       LIGHTBOX OPEN
+    ========================= */
+
+    img.addEventListener("click", () => {
+
         lightbox.style.display = "flex";
-        lightboxImg.src = e.target.src;
+
+        lightboxImg.src = src;
+
+        // PREVENT BODY SCROLL
+
+        document.body.style.overflow = "hidden";
+    });
+});
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+const lightbox = document.getElementById("lightbox");
+
+const lightboxImg = document.getElementById("lightbox-img");
+
+const closeBtn = document.getElementById("close");
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+closeBtn.addEventListener("click", closeLightbox);
+
+/* =========================
+   CLICK OUTSIDE TO CLOSE
+========================= */
+
+lightbox.addEventListener("click", (e) => {
+
+    if (e.target === lightbox) {
+
+        closeLightbox();
     }
 });
 
-close.onclick = () => {
-    lightbox.style.display = "none";
-};
+/* =========================
+   ESC KEY CLOSE
+========================= */
 
-lightbox.onclick = (e) => {
-    if (e.target === lightbox) {
-        lightbox.style.display = "none";
+document.addEventListener("keydown", (e) => {
+
+    if (e.key === "Escape") {
+
+        closeLightbox();
     }
-};
+});
 
+/* =========================
+   CLOSE FUNCTION
+========================= */
+
+function closeLightbox() {
+
+    lightbox.style.display = "none";
+
+    document.body.style.overflow = "auto";
+}
 
 /* =========================
    10 YEARS CELEBRATION
 ========================= */
 
 const popup = document.getElementById("celebrationPopup");
-const closeCelebration = document.getElementById("closeCelebration");
-const continueBtn = document.getElementById("continueBtn");
 
-// CHECK IF ALREADY SEEN
+const closeCelebration =
+    document.getElementById("closeCelebration");
+
+const continueBtn =
+    document.getElementById("continueBtn");
+
+/* SHOW ONLY ONCE */
 
 if (!localStorage.getItem("goshen10years")) {
 
     setTimeout(() => {
+
         popup.classList.add("show");
+
     }, 800);
 }
 
-// CLOSE FUNCTION
+/* CLOSE POPUP */
 
 function closePopup() {
 
@@ -124,11 +225,15 @@ function closePopup() {
     localStorage.setItem("goshen10years", "seen");
 }
 
-closeCelebration.addEventListener("click", closePopup);
+closeCelebration.addEventListener(
+    "click",
+    closePopup
+);
 
-continueBtn.addEventListener("click", closePopup);
-
-
+continueBtn.addEventListener(
+    "click",
+    closePopup
+);
 
 /* =========================
    WEBSITE LOADER
@@ -136,7 +241,7 @@ continueBtn.addEventListener("click", closePopup);
 
 const loader = document.getElementById("loader");
 
-// WAIT FOR PAGE + IMAGES
+/* WAIT FOR EVERYTHING */
 
 window.addEventListener("load", () => {
 
